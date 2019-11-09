@@ -17,3 +17,9 @@ news_sites:
       homepage_article_links: '.headline a'
       article_body: '.topper-headline h1'
       article_title: 'article.paywall'
+  jkanime:
+    url: https://jkanime.net/
+    queries:
+      homepage_article_links: '.portada-box h2 a'
+      article_body: '.sinopsis-box p'
+      article_title: '.sinopsis-box h2'
