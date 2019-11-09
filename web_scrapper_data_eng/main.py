@@ -26,13 +26,18 @@ def _news_scraper(news_site_uid):
     homepage = news.HomePage(news_site_uid, host)
 
     articles = []
+    i = 0
     for link in homepage.article_links:
         article = _fetch_article(news_site_uid, host, link)
+
+        if i == 30:
+            break
+        else:
+            i += 1
 
         if article:
             logger.info('Article fetched!!')
             articles.append(article)
-            break
     
     _save_articles(news_site_uid, articles)
 
